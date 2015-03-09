@@ -13,6 +13,9 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import java.util.List;
+import java.util.concurrent.Executors;
+
+import walker.blue.core.lib.init.InitializeProcess;
 
 /**
  * Fragment that displays configuration of the Client
@@ -30,7 +33,9 @@ public class InitFragment extends Fragment {
                              final ViewGroup container,
                              final Bundle savedInstanceState) {
         textView = new TextView(getActivity());
-        this.getUserInput();
+        InitializeProcess initializeProcess = new InitializeProcess(getActivity());
+        Executors.newSingleThreadExecutor().submit(initializeProcess);
+//        Toast.makeText(getActivity(), "Done Calling stuff", Toast.LENGTH_SHORT).show();
         return textView;
     }
 
