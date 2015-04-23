@@ -13,7 +13,7 @@ import android.widget.ProgressBar;
 import walker.blue.demo.app.fragments.InitFragment;
 
 /**
- * Main activity of the application. 
+ * Main activity of the application.
  */
 public class MainActivity extends ActionBarActivity {
 
@@ -39,9 +39,9 @@ public class MainActivity extends ActionBarActivity {
         this.progressBar = (ProgressBar) findViewById(R.id.progress_bar);
 
         this.getSupportFragmentManager()
-                .beginTransaction()
-                .replace(R.id.content_frame, new InitFragment())
-                .commit();
+            .beginTransaction()
+            .replace(R.id.content_frame, new InitFragment())
+            .commit();
     }
 
     @Override
@@ -60,10 +60,10 @@ public class MainActivity extends ActionBarActivity {
     public void changeFragment(final Fragment fragment) {
         if (fragment != null) {
             this.getSupportFragmentManager()
-                    .beginTransaction()
-                    .replace(R.id.content_frame, fragment)
-                    .addToBackStack(null)
-                    .commit();
+                .beginTransaction()
+                .replace(R.id.content_frame, fragment)
+                .addToBackStack(null)
+                .commit();
         }
     }
 
